@@ -9,13 +9,17 @@
 
     <div>
         <form action="/" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" />
+            <input type="file" name="file" accept=".csv" />
             <input type="submit" />
         </form>
         <div style="height:30%;width:50%">
             <img style="height:100%;width:100%" src="data:image/png;base64, {{ mcc_url }}" />
         </div>
-
+        <div style="height:30%;width:50%">
+            <p>mcc:{{mcc}}</p>
+            <p>acc:{{acc}}</p>
+            <p>f1:{{f1}}</p>
+        </div>
     </div>
 
 

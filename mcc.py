@@ -1,23 +1,25 @@
+import base64
+import torch.nn as nn
+from transformers import BertTokenizer
+from torch.utils.data import TensorDataset, random_split
+import torch
+from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
+from transformers import BertForSequenceClassification, AdamW, BertConfig
+from transformers import get_linear_schedule_with_warmup
+import io
+import datetime
+import time
+import random
+from sklearn.metrics import matthews_corrcoef, f1_score
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.metrics import matthews_corrcoef, f1_score
-import random
-import time
-import datetime
-import io
-from transformers import get_linear_schedule_with_warmup
-from transformers import BertForSequenceClassification, AdamW, BertConfig
-from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-import torch
-from torch.utils.data import TensorDataset, random_split
-from transformers import BertTokenizer
-import torch.nn as nn
-import base64
+import matplotlib
 
 
 def mcc_score(file):
+    matplotlib.use('Agg')
     tokenizer = BertTokenizer.from_pretrained(
         'bert-base-cased', do_lower_case=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -108,10 +110,9 @@ def mcc_score(file):
     flat_true_labels = np.concatenate(true_labels, axis=0)
 
     # 計算 MCC
-    mcc = matthews_corrcoef(flat_true_labels, flat_predictions)
+    mcc = round(matthews_corrcoef(flat_true_labels, flat_predictions), 3)
 
-    print('Total MCC: %.3f' % mcc)
-    print(flat_accuracy(flat_predictions, flat_true_labels))
-    print(f1_score(flat_true_labels, flat_predictions,  average='macro'))
+    acc = flat_accuracy(flat_predictions, flat_true_labels)
+    f1 = f1_score(flat_true_labels, flat_predictions,  average='macro')
 
-    return plot_data
+    return plot_data, mcc, acc, f1
