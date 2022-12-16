@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.metrics import matthews_corrcoef
+from sklearn.metrics import matthews_corrcoef, f1_score
 import random
 import time
 import datetime
+import io
 from transformers import get_linear_schedule_with_warmup
 from transformers import BertForSequenceClassification, AdamW, BertConfig
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
@@ -13,6 +14,7 @@ import torch
 from torch.utils.data import TensorDataset, random_split
 from transformers import BertTokenizer
 import torch.nn as nn
+import base64
 
 
 def mcc_score(file):
@@ -93,7 +95,10 @@ def mcc_score(file):
     plt.ylabel('MCC Score (-1 to +1)')
     plt.xlabel('Batch #')
 
-    plt.show()
+    img = io.BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    plot_data = base64.b64encode(img.read()).decode()
     flat_predictions = np.concatenate(predictions, axis=0)
 
     # 取每個樣本的最大值作為預測值
@@ -107,3 +112,6 @@ def mcc_score(file):
 
     print('Total MCC: %.3f' % mcc)
     print(flat_accuracy(flat_predictions, flat_true_labels))
+    print(f1_score(flat_true_labels, flat_predictions,  average='macro'))
+
+    return plot_data

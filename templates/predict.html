@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Template</title>
+    <script>var results = '{{ results|tojson }}';</script>
+    <script src="{{ url_for('static', filename='predict.js') }}"></script>
+</head>
+
+<body>
+
+    <div>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
+        <div id="data" style="height:60%;width:50%">
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
