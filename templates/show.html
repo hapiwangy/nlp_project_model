@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>show</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/show.css">
+    <script src="../static/js/show.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="div-title">
+            <p class="title">NLP專題-ESG分類</p>
+        </div>
+        <div class="div-content">
+            <p class="content">請輸入一段文字:</p>
+            <form action="/model_predict" method="post">
+                <textarea rows="6" cols="30" name="text" placeholder="example" required></textarea>
+                <input type="submit" value="Send Request">
+            </form>
+            <p class="content">模型預測結果:</p>
+            <div class="div-result">
+                <p id="result">{{result}}</p>
+            </div>
+        </div>
+        <div class="div-href">
+            <a class="href" href="{{url_for('member')}}">member</a>
+            <a class="href" href="{{url_for('process')}}">process</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

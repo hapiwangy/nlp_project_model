@@ -1,0 +1,58 @@
+.div-content {
+    height: 70%;
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: lightblue;
+    border-radius: 30px;
+    border: solid black;
+    border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+textarea {
+    height: 60%;
+    width: 50%;
+}
+
+input {
+    height: 10%;
+    width: 10%;
+    cursor: pointer;
+    background-color: azure;
+    transition: 0.5s;
+}
+
+input:hover {
+    background-color: bisque;
+    transform: scale(1.1);
+
+}
+
+.content {
+    font-size: 3vmin;
+}
+
+.div-result {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#result {
+    font-size: 5vmin;
+}

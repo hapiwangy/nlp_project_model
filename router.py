@@ -22,3 +22,22 @@ def predict():
             file.save('data/'+file.filename)
             return render_template('predict.html', results=model_predict('data/'+file.filename))
     return render_template('predict.html', results='')
+
+
+def show():
+    try:
+        return render_template('show.html', result=request.args['result'])
+    except:
+        return render_template('show.html', result='')
+
+
+def process():
+    return render_template('process.html')
+
+
+def member():
+    return render_template('member.html')
+
+
+def model_predict():
+    return redirect(url_for('show', result=request.form['text']))

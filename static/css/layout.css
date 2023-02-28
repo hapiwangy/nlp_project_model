@@ -1,0 +1,46 @@
+html body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.div-title {
+    margin-top: 2%;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 7vmin;
+}
+
+.div-href {
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 5%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.href {
+    font-size: 3vmin;
+}
