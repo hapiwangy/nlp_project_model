@@ -1,4 +1,4 @@
-.div-content {
+.div-class {
     height: 70%;
     width: 80%;
     margin-top: 4%;
@@ -12,9 +12,9 @@
 .div-img {
     height: 90%;
     width: 25%;
-    background-color: lightblue;
+    background-color: #88AB75;
     border-radius: 30px;
-    border: solid black;
+    border: solid #DE8F6E;
     border-width: 5px;
     display: flex;
     flex-direction: column;
@@ -25,15 +25,52 @@
 }
 
 .div-img:hover {
-    background-color: bisque;
+    background-color: #DBD56E;
     transform: scale(1.1);
 }
 
-img {
+.img-class {
     max-height: 50%;
     max-width: 80%
 }
 
-.p-img {
+.p-class {
+    font-size: 5vmin;
+}
+
+.div-inside {
+    height: 60%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #88AB75;
+    border-radius: 30px;
+    border: solid #DE8F6E;
+    border-width: 5px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-inside {
+    max-width: 50%;
+    max-height: 80%;
+}
+
+.div-inside-content {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-inside-title {
+    font-size: 7vmin;
+}
+
+.p-inside-content {
     font-size: 5vmin;
 }

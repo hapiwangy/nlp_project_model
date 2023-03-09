@@ -13,23 +13,35 @@
         <div class="div-title">
             <p class="title">NLP專題-使用技術</p>
         </div>
-        <div class="div-content">
+        <div class="div-class" id="divClass">
             <div class="div-img">
-                <img src="../static/img/data.png" />
-                <p class="p-img">data</p>
+                <img class="img-class" src="../static/img/data.png" />
+                <p class="p-class">data</p>
             </div>
             <div class="div-img">
-                <img src="../static/img/model.png" />
-                <p class="p-img">model</p>
+                <img class="img-class" src="../static/img/model.png" />
+                <p class="p-class">model</p>
             </div>
             <div class="div-img">
-                <img src="../static/img/web.png" />
-                <p class="p-img">web</p>
+                <img class="img-class" src="../static/img/web.png" />
+                <p class="p-class">web</p>
             </div>
         </div>
+        <div class="div-inside" id="divInside">
+            <img class="img-inside" src="" />
+            <div class="div-inside-content">
+                <p class="p-inside-title">你好</p>
+                <p class="p-inside-content">這是內容</p>
+            </div>
+
+        </div>
         <div class="div-href">
-            <a class="href" href="{{url_for('show')}}">show</a>
-            <a class="href" href="{{url_for('member')}}">member</a>
+            <a href="{{url_for('show')}}">
+                <p class="href">show</p>
+            </a>
+            <a href="{{url_for('member')}}">
+                <p class="href">member</p>
+            </a>
         </div>
     </div>
 

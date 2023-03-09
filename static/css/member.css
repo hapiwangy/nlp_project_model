@@ -14,9 +14,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: lightblue;
+    background-color: #88AB75;
     border-radius: 30px;
-    border: solid black;
+    border: solid #DE8F6E;
     border-width: 5px;
 }
 
@@ -36,9 +36,9 @@ img {
     left: 10%;
     height: 70%;
     width: 80%;
-    background-color: lightblue;
+    background-color: #88AB75;
     border-radius: 30px;
-    border: solid black;
+    border: solid #DE8F6E;
     border-width: 5px;
     overflow: scroll;
     transition: 0.5s;
