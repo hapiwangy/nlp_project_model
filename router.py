@@ -4,7 +4,8 @@ import os
 from mcc import mcc_score
 from model_predict import model_predict
 
-
+import classify
+model = classify.model_predict()
 def index():
     if request.method == 'POST':
         file = request.files['file']
@@ -26,7 +27,9 @@ def predict():
 
 def show():
     try:
-        return render_template('show.html', result=request.args['result'])
+        model.consequence(request.args['result'])
+        result = model.answer
+        return render_template('show.html', result=result)
     except:
         return render_template('show.html', result='')
 
